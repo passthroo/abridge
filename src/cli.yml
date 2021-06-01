@@ -1,0 +1,13 @@
+name: rust-zip-word-list
+version: "0.1.0"
+about: Compresses/decompresses word lists
+author: Someone
+args:
+    - compress:
+        short: --c
+        long: --compress
+        help: Compresses a word list, where words are on each on a newline.
+    - decompress:
+        short: --d
+        long: --decompress
+        help: Decompresses a word list
