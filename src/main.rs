@@ -11,7 +11,7 @@ use clap::App;
 #[macro_use]
 extern crate more_asserts;
 
-fn compress(buf: &str) -> String {
+pub fn compress(buf: &str) -> String {
     let mut line_prev = String::new();
     let mut result = String::new();
 
@@ -40,7 +40,7 @@ fn compress(buf: &str) -> String {
     result
 }
 
-fn decompress(buf: &str) -> String {
+pub fn decompress(buf: &str) -> String {
     let mut chars = buf.chars().peekable();
     let mut result = String::new();
     let mut word = String::new();
@@ -82,7 +82,7 @@ fn decompress(buf: &str) -> String {
     result
 }
 
-fn main() {
+pub fn main() {
     // read CLI config
     let yaml = load_yaml!("cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
