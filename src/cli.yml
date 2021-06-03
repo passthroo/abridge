@@ -1,7 +1,7 @@
-name: rust-zip-word-list
-version: "0.1.0"
+name: abridge 
+version: "0.3.0"
 about: Compresses/decompresses word lists
-author: Someone
+author: Conner D 
 args:
     - compress:
         short: --c
