@@ -4,10 +4,9 @@ version = 3
 
 [[package]]
 name = "abridge"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "clap",
- "more-asserts",
  "substring",
 ]
 
@@ -73,12 +72,6 @@ name = "libc"
 version = "0.2.95"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "789da6d93f1b866ffe175afc5322a4d76c038605a1c3319bb57b06967ca98a36"
-
-[[package]]
-name = "more-asserts"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0debeb9fcf88823ea64d64e4a815ab1643f33127d995978e099942ce38f25238"
 
 [[package]]
 name = "strsim"
