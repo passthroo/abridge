@@ -12,17 +12,17 @@ pub fn main() {
     let matches = App::from_yaml(yaml).get_matches();
 
     let mut buffer = String::new();
-    let mut stdin = io::stdin();
 
     // read stdin
-    match stdin.read_to_string(&mut buffer) {
+    match io::stdin().read_to_string(&mut buffer) {
         Ok(_) => {
+            // result to stdout
             if matches.is_present("compress") {
                 print!("{}", lib::compress(&buffer));
             } else if matches.is_present("decompress") {
                 print!("{}", lib::decompress(&buffer));
             }
         }
-        Err(why) => panic!("{}", why),
+        Err(why) => panic!("stdin input could not be read -> {}", why),
     }
 }

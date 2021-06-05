@@ -1,15 +1,15 @@
 name: abridge 
-version: "1.1.1"
+version: "1.1.2"
 about: Compress a sorted word list or decompress a file compressed by abridge or GNU word-list-compress.
 author: Conner D 
 settings:
-    - SubcommandRequiredElseHelp
+    - ArgRequiredElseHelp
 args:
     - compress:
         short: --c
         long: --compress
-        help: Compresses a word list from standard input, with one ASCII word per line in alphabetical order.
+        help: Compresses a word list from standard input, with one ASCII word per line in alphabetical order
     - decompress:
         short: --d
         long: --decompress
-        help: Decompresses a word list from standard input, which was compressed by abridge or word-list-compress.
+        help: Decompresses a word list from standard input, which was compressed by abridge or word-list-compress

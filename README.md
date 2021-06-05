@@ -1,8 +1,14 @@
 # abridge
 
-Compress a sorted word list or decompress a file compressed by abridge or GNU word-list-compress.
+Compress a sorted word list or decompress a file compressed by `abridge` or GNU `word-list-compress`.
 
-`abridge` is a port of GNU [word-list-compress](https://duckduckgo.com/?q=word-list-compress) to Rust.
+`abridge` is a port of GNU [word-list-compress](https://duckduckgo.com/?q=word-list-compress) to Rust. It doesn't have
+anything to do with the [GNU Aspell](http://aspell.net/) project.
+
+`abridge` is both a Rust library and CLI, so you can use `abridge` in your Rust project or run it by itself. The CLI
+expects input from stdin and will output to stdout.
+
+It only relies on [clap](https://clap.rs) and Rust's built-in `substring` crate. 
 
 `word-list-compress` is about 150 SLOC. `abridge` is about 50 SLOC or 80 with the CLI. They perform identically.
 
@@ -34,7 +40,7 @@ abridge --compress < words.txt > words.tzip # compress words.txt and save to fil
 
 ## Safety 
 
-Abridge can *compress* word lists where:
+`abridge` can *compress* word lists where:
 
 - Words are in alphabetical order
 - Words are separated by newline
@@ -42,7 +48,7 @@ Abridge can *compress* word lists where:
 
 Words may include uppercase characters, but use lowercase for the best results.
 
-Abridge can *decompress* files compressed by `abridge` or `word-list-compress` alike.
+`abridge` can *decompress* files compressed by `abridge` or `word-list-compress` alike.
 
 ## Testing
 
@@ -50,5 +56,5 @@ Run `cargo test`.
 
 ## License
 
-Abridge is licensed under [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html). 
+`abridge` is licensed under [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html). 
 
