@@ -18,7 +18,7 @@ use substring::Substring;
 /// ```
 /// abridge -c < words.txt # compress words.txt
 /// ```
-/// 
+///
 /// ```
 /// abridge --compress < words.txt > words.tzip # compress words.txt and save to words.tzip
 /// ```
