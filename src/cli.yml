@@ -1,6 +1,6 @@
 name: abridge 
-version: "1.0.0"
-about: A word list compression library, which is just a port of GNU word-list-compress to Rust.
+version: "1.1.0"
+about: Compress a sorted word list or decompress a file compressed by abridge or GNU word-list-compress.
 author: Conner D 
 args:
     - compress:

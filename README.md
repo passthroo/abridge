@@ -1,9 +1,10 @@
 # abridge
 
-Abridge is a port of GNU's [word-list-compress](https://duckduckgo.com/?q=word-list-compress) to Rust.
+Compress a sorted word list or decompress a file compressed by abridge or GNU word-list-compress.
 
-`word-list-compress` is about 150 SLOC. Abridge is about 50 SLOC or 80 with the CLI. They perform identically under 
-testing.
+`abridge` is a port of GNU [word-list-compress](https://duckduckgo.com/?q=word-list-compress) to Rust.
+
+`word-list-compress` is about 150 SLOC. `abridge` is about 50 SLOC or 80 with the CLI. They perform identically.
 
 ## Install
 
@@ -31,12 +32,15 @@ abridge --decompress < words.tzip # decompress words.tzip
 abridge --compress < words.txt > words.tzip # compress words.txt and save to file
 ```
 
-## Limitations
+## Safety 
 
-Abridge *compression* expects:
+Abridge can *compress* word lists where:
 
 - Words are in alphabetical order
 - Words are separated by newline
+- Words contain ASCII characters 
+
+Words may include uppercase characters, but use lowercase for the best results.
 
 Abridge can *decompress* files compressed by `abridge` or `word-list-compress` alike.
 
