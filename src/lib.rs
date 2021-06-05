@@ -1,6 +1,21 @@
+//! # abridge
+//!
+//! `abridge` is a port of GNU's [word-list-compress](https://duckduckgo.com/?q=word-list-compress) to Rust.
+
 use std::char;
 use substring::Substring;
 
+// Compresses the given word list, returning the result.
+//
+// # Requirements:
+//
+// - Words are in alphabetical order
+// - Words are separated by newline
+//
+// # Examples:
+// 
+// `abridge -c < words.txt`
+// `abridge --compress < words.txt > words.tzip`
 pub fn compress(buf: &str) -> String {
     let mut line_prev = String::new();
     let mut result = String::new();
@@ -24,6 +39,15 @@ pub fn compress(buf: &str) -> String {
     result
 }
 
+// Decompresses the given word list, returning the result.
+//
+// # Requirements:
+//
+// - Word list must have been compressed by `abridge` or GNU `word-list-compress`
+//
+// # Examples:
+//
+// `abridge --decompress < words.tzip # decompress words.tzip`
 pub fn decompress(buf: &str) -> String {
     let mut chars = buf.chars().peekable();
     let mut matches = chars.next().unwrap() as u8;
