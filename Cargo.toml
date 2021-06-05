@@ -1,7 +1,8 @@
 [package]
 name = "abridge"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2018"
+author = "passthroo"
 
 [dependencies]
 clap = {version = "^2.33.3", features = ["yaml"]}
