@@ -15,11 +15,11 @@ use substring::Substring;
 ///
 /// # Examples:
 ///
-/// ```
+/// ```shell
 /// abridge -c < words.txt # compress words.txt
 /// ```
 ///
-/// ```
+/// ```shell
 /// abridge --compress < words.txt > words.tzip # compress words.txt and save to words.tzip
 /// ```
 pub fn compress(buf: &str) -> String {
@@ -54,7 +54,7 @@ pub fn compress(buf: &str) -> String {
 ///
 /// # Examples:
 ///
-/// ```
+/// ```shell
 /// abridge --decompress < words.tzip # decompress words.tzip
 /// ```
 pub fn decompress(buf: &str) -> String {
