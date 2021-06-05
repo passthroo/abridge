@@ -13,7 +13,7 @@ use substring::Substring;
 // - Words are separated by newline
 //
 // # Examples:
-// 
+//
 // `abridge -c < words.txt`
 // `abridge --compress < words.txt > words.tzip`
 pub fn compress(buf: &str) -> String {
@@ -89,7 +89,7 @@ mod tests {
     #[test]
     fn compress_unknown_chars() {
         assert_eq!(
-            compress("😀\n😃\n😄\n😁\n😆\n😅\n😂\n🤣\n"), 
+            compress("😀\n😃\n😄\n😁\n😆\n😅\n😂\n🤣\n"),
             "\u{1}😀\u{1}😃\u{1}😄\u{1}😁\u{1}😆\u{1}😅\u{1}😂\u{1}🤣"
         );
     }
