@@ -1,6 +1,6 @@
 //! # abridge
 //!
-//! `abridge` compresses a sorted word list or decompresses a file compressed by `abridge` or `word-list-compress`.
+//! Compress a sorted word list or decompress a file compressed by `abridge` or `word-list-compress`.
 
 use std::char;
 use substring::Substring;

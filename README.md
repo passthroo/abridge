@@ -10,7 +10,7 @@ expects input from stdin and will output to stdout.
 
 It only relies on [clap](https://clap.rs) and Rust's built-in `substring` crate. 
 
-`word-list-compress` is about 150 SLOC. `abridge` is about 50 SLOC or 80 with the CLI. They perform identically.
+`word-list-compress` is about 150 SLOC. `abridge` is about 50 SLOC. They perform identically.
 
 ## Install
 
