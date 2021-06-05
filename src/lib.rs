@@ -5,7 +5,7 @@
 use std::char;
 use substring::Substring;
 
-// Compresses the given word list, returning the result.
+// Compresses a word list from standard input, with one ASCII word per line in alphabetical order.
 //
 // # Safety:
 //
@@ -41,7 +41,7 @@ pub fn compress(buf: &str) -> String {
     result
 }
 
-// Decompresses the given word list, returning the result.
+// Decompresses a word list from standard input, which was compressed by abridge or word-list-compress.
 //
 // # Requirements:
 //
