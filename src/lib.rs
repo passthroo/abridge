@@ -1,22 +1,22 @@
 //! # abridge
 //!
-//! `abridge` compresses a sorted word list or decompresses a file compressed by abridge or GNU word-list-compress.
+//! `abridge` compresses a sorted word list or decompresses a file compressed by abridge or GNU word-list-compress
 
 use std::char;
 use substring::Substring;
 
-// Compresses a word list from standard input, with one ASCII word per line in alphabetical order.
-//
-// # Safety:
-//
-// - Words are in alphabetical order
-// - Words are separated by newline
-// - Words contain ASCII characters
-//
-// # Examples:
-//
-// `abridge -c < words.txt`
-// `abridge --compress < words.txt > words.tzip`
+/// Compresses a word list from standard input, with one ASCII word per line in alphabetical order.
+///
+/// # Safety:
+///
+/// - Words are in alphabetical order
+/// - Words are separated by newline
+/// - Words contain ASCII characters
+///
+/// # Examples:
+///
+/// `abridge -c < words.txt`
+/// `abridge --compress < words.txt > words.tzip`
 pub fn compress(buf: &str) -> String {
     let mut line_prev = String::new();
     let mut result = String::new();
@@ -41,15 +41,15 @@ pub fn compress(buf: &str) -> String {
     result
 }
 
-// Decompresses a word list from standard input, which was compressed by abridge or word-list-compress.
-//
-// # Requirements:
-//
-// - Word list must have been compressed by `abridge` or GNU `word-list-compress`
-//
-// # Examples:
-//
-// `abridge --decompress < words.tzip # decompress words.tzip`
+/// Decompresses a word list from standard input, which was compressed by abridge or word-list-compress.
+///
+/// # Requirements:
+///
+/// - Word list must have been compressed by `abridge` or GNU `word-list-compress`
+///
+/// # Examples:
+///
+/// `abridge --decompress < words.tzip # decompress words.tzip`
 pub fn decompress(buf: &str) -> String {
     let mut chars = buf.chars().peekable();
     let mut matches = chars.next().unwrap() as u8;
