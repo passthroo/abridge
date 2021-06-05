@@ -4,6 +4,10 @@ description = "Compress a sorted word list or decompress a file compressed by ab
 version = "1.1.2"
 license = "GPL-3.0-or-later"
 edition = "2018"
+documentation = "https://docs.rs/abridge"
+readme = "README.md"
+homepage = "https://github.com/passthroo/abridge"
+repository = "https://github.com/passthroo/abridge"
 
 [dependencies]
 clap = {version = "^2.33.3", features = ["yaml"]}
