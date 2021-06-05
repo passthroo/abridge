@@ -35,7 +35,7 @@ abridge --decompress < words.tzip # decompress words.tzip
 ```
 
 ```shell
-abridge --compress < words.txt > words.tzip # compress words.txt and save to file
+abridge --compress < words.txt > words.tzip # compress words.txt and save to words.tzip 
 ```
 
 ## Safety 

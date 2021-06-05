@@ -1,6 +1,6 @@
 //! # abridge
 //!
-//! `abridge` compresses a sorted word list or decompresses a file compressed by abridge or GNU word-list-compress
+//! `abridge` compresses a sorted word list or decompresses a file compressed by `abridge` or `word-list-compress`.
 
 use std::char;
 use substring::Substring;
@@ -15,8 +15,13 @@ use substring::Substring;
 ///
 /// # Examples:
 ///
-/// `abridge -c < words.txt`
-/// `abridge --compress < words.txt > words.tzip`
+/// ```
+/// abridge -c < words.txt # compress words.txt
+/// ```
+/// 
+/// ```
+/// abridge --compress < words.txt > words.tzip # compress words.txt and save to words.tzip
+/// ```
 pub fn compress(buf: &str) -> String {
     let mut line_prev = String::new();
     let mut result = String::new();
@@ -41,15 +46,17 @@ pub fn compress(buf: &str) -> String {
     result
 }
 
-/// Decompresses a word list from standard input, which was compressed by abridge or word-list-compress.
+/// Decompresses a word list from standard input, which was compressed by `abridge` or `word-list-compress`.
 ///
 /// # Requirements:
 ///
-/// - Word list must have been compressed by `abridge` or GNU `word-list-compress`
+/// - Word list must have been compressed by `abridge` or `word-list-compress`
 ///
 /// # Examples:
 ///
-/// `abridge --decompress < words.tzip # decompress words.tzip`
+/// ```
+/// abridge --decompress < words.tzip # decompress words.tzip
+/// ```
 pub fn decompress(buf: &str) -> String {
     let mut chars = buf.chars().peekable();
     let mut matches = chars.next().unwrap() as u8;
