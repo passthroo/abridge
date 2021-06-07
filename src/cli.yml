@@ -1,5 +1,5 @@
 name: abridge 
-version: "1.1.5"
+version: "1.1.6"
 about: Compress a sorted word list or decompress a file compressed by abridge or word-list-compress.
 author: Conner D 
 settings:

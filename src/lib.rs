@@ -28,19 +28,20 @@ pub fn compress(buf: &str) -> String {
 
     for line in buf.lines() {
         let line = line.to_lowercase();
-        let mut matches = 0;
+        let mut matches = 0u8;
 
         for chars in line.chars().zip(line_prev.chars()) {
             if chars.0 == chars.1 {
                 matches += 1;
             } else {
-                break;
+                break
             }
         }
 
-        line_prev = line.to_string();
-        result.push((matches + 1) as u8 as char);
-        result.push_str(line.substring(matches, line.chars().count()));
+        result.push((matches + 1) as char);
+        result.push_str(line.substring(matches as usize, line.chars().count()));
+        
+        line_prev = line.clone();
     }
 
     result
@@ -149,12 +150,11 @@ mod tests {
         }
     }
 
-    //TODO Fails due to compress() to_lowercase() switch. Should not fail.
     #[test]
-    #[should_panic]
     fn compress_decompress_french_dict() {
         if let Ok(input) = fs::read_to_string("tests/french.txt") {
-            assert_eq!(decompress(&compress(&input)), input);
+            // This dictionary contains some uppercase letters, which messes up the assert.
+            assert_eq!(decompress(&compress(&input)), input.to_lowercase());
         }
     }
 }
